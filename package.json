@@ -1,0 +1,24 @@
+{
+  "name": "@slowerloris/server-utils",
+  "version": "0.0.1",
+  "description": "A collection of utilities for Node.js servers",
+  "type": "module",
+  "packageManager": "yarn@4.4.0",
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "typescript": "5.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slowerloris/server-utils.git"
+  },
+  "keywords": [
+    "server",
+    "utils"
+  ],
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

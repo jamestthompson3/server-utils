@@ -1,0 +1,16 @@
+{
+  "name": "@slower-loris/environment",
+  "version": "0.0.1",
+  "type": "module",
+  "packageManager": "yarn@4.4.0",
+  "description": "Tools for managing environment variables, and avoid reading from the process object more than once.",
+  "scripts": {
+    "test": "node --test",
+    "build": "tsc",
+    "prepack": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4"
+  },
+  "main": "src/index.js"
+}
