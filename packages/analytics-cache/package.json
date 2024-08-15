@@ -1,5 +1,5 @@
 {
-  "name": "@slower-loris/analytics-cache",
+  "name": "@slowerloris/analytics-cache",
   "version": "0.0.2",
   "description": "A simple, anonymous analytics cache",
   "packageManager": "yarn@4.4.0",
@@ -14,6 +14,7 @@
     "ulid": "2.3.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "typescript": "5.5.4"
   },
   "main": "src/index.js"

@@ -94,6 +94,6 @@
       "bracketSameLine": false,
       "attributePosition": "auto"
     },
-    "globals": ["document", "navigator", "window"]
+    "globals": ["window"]
   }
 }

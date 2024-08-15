@@ -96,19 +96,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slower-loris/analytics-cache@workspace:packages/analytics-cache":
+"@slowerloris/analytics-cache@workspace:packages/analytics-cache":
   version: 0.0.0-use.local
-  resolution: "@slower-loris/analytics-cache@workspace:packages/analytics-cache"
+  resolution: "@slowerloris/analytics-cache@workspace:packages/analytics-cache"
   dependencies:
+    "@biomejs/biome": "npm:1.8.3"
     typescript: "npm:5.5.4"
     ulid: "npm:2.3.0"
   languageName: unknown
   linkType: soft
 
-"@slower-loris/environment@workspace:packages/environment":
+"@slowerloris/csrf@workspace:packages/csrf":
   version: 0.0.0-use.local
-  resolution: "@slower-loris/environment@workspace:packages/environment"
+  resolution: "@slowerloris/csrf@workspace:packages/csrf"
   dependencies:
+    "@biomejs/biome": "npm:1.8.3"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
+"@slowerloris/environment@workspace:packages/environment":
+  version: 0.0.0-use.local
+  resolution: "@slowerloris/environment@workspace:packages/environment"
+  dependencies:
+    "@biomejs/biome": "npm:1.8.3"
     typescript: "npm:5.5.4"
   languageName: unknown
   linkType: soft

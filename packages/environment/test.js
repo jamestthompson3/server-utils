@@ -19,6 +19,31 @@ test("Environment should not throw if all required environment variables are pre
   assert.doesNotThrow(() => new Environment(config));
 });
 
+test("Environment should accept functions as config options", () => {
+  process.env.DEBUG = "myapp:express-sesssion:cookiebanner";
+  const config = {
+    DEBUG: (env) => env.DEBUG.split(":").includes("myapp"),
+  };
+  let env;
+  assert.doesNotThrow(() => {
+    env = new Environment(config);
+  });
+  assert.equal(env.var("DEBUG"), true);
+});
+
+test("Environment should not throw if environment variable is false", () => {
+  process.env.DEBUG = "express";
+  const config = {
+    PORT: "PORT",
+    DEBUG: (env) => env.DEBUG.includes("myapp"),
+  };
+  let env;
+  assert.doesNotThrow(() => {
+    env = new Environment(config);
+  });
+  assert.equal(env.var("DEBUG"), false);
+});
+
 test("env.var() should return the value of the environment variable if present", () => {
   process.env.PORT = "1234";
   const config = {

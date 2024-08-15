@@ -4,15 +4,22 @@
  */
 export class Environment {
   #environment = {};
+  /**
+   * @param {object} config - an object with keys as environment variables and values as either a string or a function that takes the environment and returns the value
+   */
   constructor(config) {
     const { env } = process;
     Object.entries(config).forEach(([key, value]) => {
-      this.#environment[key] = env[value];
-    });
-    // FAIL EARLY!
-    Object.keys(this.#environment).forEach((key) => {
-      if (!this.#environment[key]) {
+      if (typeof value === "function") {
+        const val = value(env);
+        if (val === undefined || val === null) {
+          throw new Error(`Missing environment variable ${key}`);
+        }
+        this.#environment[key] = val;
+      } else if (env[value] === undefined || env[value] === null) {
         throw new Error(`Missing environment variable ${key}`);
+      } else {
+        this.#environment[key] = env[value];
       }
     });
   }
@@ -22,12 +29,12 @@ export class Environment {
    * @param {string} key - name of the environment variable you want to get, must be previously defined in config
    *
    * @example
-   * const PORT = env`PORT`
+   * const PORT = env.var('PORT')
    *
    */
   var(key) {
     const value = this.#environment[key];
-    if (!value) {
+    if (value === undefined || value === null) {
       throw new Error(`Did not find value for ${key}`);
     }
     return value;
