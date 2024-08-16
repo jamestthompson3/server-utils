@@ -141,6 +141,9 @@ export class AnalyticsSession {
   addSession(props, cb) {
     const propError = this.#checkPropErrors(props, cb);
     if (propError) {
+      if (this.async) {
+        return [propError, undefined];
+      }
       return cb(propError, undefined);
     }
     const hash = this.hasher();
@@ -167,6 +170,9 @@ export class AnalyticsSession {
   sessionExistsForPath(props, cb) {
     const propError = this.#checkPropErrors(props);
     if (propError) {
+      if (this.async) {
+        return [propError, undefined];
+      }
       return cb(propError, undefined);
     }
     const hash = this.hasher();
@@ -193,6 +199,9 @@ export class AnalyticsSession {
   delete(props, cb) {
     const propError = this.#checkPropErrors(props);
     if (propError) {
+      if (this.async) {
+        return [propError, undefined];
+      }
       return cb(propError, undefined);
     }
     const hash = this.hasher();

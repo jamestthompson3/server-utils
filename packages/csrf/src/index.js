@@ -59,9 +59,7 @@ export function csrf(config, callback) {
       return callback(undefined, csrfToken.toString("hex"));
     }
     // If the request is exempted, we're done!
-    if (
-      excludedPaths.some((x) => x === req.url || (x.test && x.test(req.url)))
-    ) {
+    if (excludedPaths.some((x) => x === req.url || x.test?.(req.url))) {
       return callback(undefined, csrfToken.toString("hex"));
     }
     // If the request is being made with https, double check the origin of the referrer

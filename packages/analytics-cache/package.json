@@ -1,6 +1,6 @@
 {
   "name": "@slowerloris/analytics-cache",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple, anonymous analytics cache",
   "packageManager": "yarn@4.4.0",
   "license": "MIT",
