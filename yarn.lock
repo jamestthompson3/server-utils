@@ -124,6 +124,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@slowerloris/logging@workspace:packages/logging":
+  version: 0.0.0-use.local
+  resolution: "@slowerloris/logging@workspace:packages/logging"
+  dependencies:
+    "@biomejs/biome": "npm:1.8.3"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "@slowerloris/server-utils@workspace:.":
   version: 0.0.0-use.local
   resolution: "@slowerloris/server-utils@workspace:."
