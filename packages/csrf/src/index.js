@@ -93,7 +93,7 @@ export function csrf(config, callback) {
       return verifyRequest(token, csrfToken, secret, res, callback);
     } else {
       // If we consume the body stream, frameworks will throw an error, so let your framework handle it
-      callback(
+      return callback(
         new Error("You must register CSRF after a body parsing middleware"),
       );
     }
@@ -114,7 +114,7 @@ function verifyRequest(token, csrfToken, secret, res, callback) {
         ),
       );
     }
-    callback(undefined, undefined);
+    return callback(undefined, csrfToken.toString("hex"));
   } catch (e) {
     // reset the cookie
     res.setHeader("Set-Cookie", `csrf-token=; Path=/; Max-Age=0`);

@@ -1,6 +1,6 @@
 {
   "name": "@slowerloris/csrf",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "packageManager": "yarn@4.4.0",
   "description": "A CSRF middleware for node servers",
